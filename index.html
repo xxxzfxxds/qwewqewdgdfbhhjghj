@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авторизация с базой данных | GitHub Pages</title>
+    <title>Форма авторизации</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,10 +13,10 @@
     <div class="container" id="loginContainer">
         <div class="header">
             <div class="logo">
-                <i class="fas fa-database"></i>
+                <i class="fas fa-user-circle"></i>
             </div>
-            <h1>Авторизация с базой данных</h1>
-            <p>IndexedDB на GitHub Pages</p>
+            <h1>Авторизация</h1>
+            <p>Введите ваши данные для входа</p>
         </div>
         
         <div class="form-container">
@@ -28,17 +28,17 @@
             <!-- Форма входа -->
             <div class="form-section active" id="loginForm">
                 <div class="input-group">
-                    <label for="loginEmail">Электронная почта</label>
+                    <label for="loginEmail">Email</label>
                     <i class="fas fa-envelope"></i>
-                    <input type="email" id="loginEmail" placeholder="Ваш email">
-                    <div class="error-message" id="loginEmailError">Пожалуйста, введите корректный email</div>
+                    <input type="email" id="loginEmail" placeholder="example@mail.com">
+                    <div class="error-message" id="loginEmailError">Введите корректный email</div>
                 </div>
                 
                 <div class="input-group">
                     <label for="loginPassword">Пароль</label>
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="loginPassword" placeholder="Ваш пароль">
-                    <div class="error-message" id="loginPasswordError">Пароль должен содержать не менее 6 символов</div>
+                    <input type="password" id="loginPassword" placeholder="••••••">
+                    <div class="error-message" id="loginPasswordError">Пароль должен быть не менее 6 символов</div>
                 </div>
                 
                 <div class="options">
@@ -58,46 +58,32 @@
                     <label for="registerName">Имя</label>
                     <i class="fas fa-user"></i>
                     <input type="text" id="registerName" placeholder="Ваше имя">
-                    <div class="error-message" id="registerNameError">Пожалуйста, введите ваше имя</div>
+                    <div class="error-message" id="registerNameError">Введите ваше имя</div>
                 </div>
                 
                 <div class="input-group">
-                    <label for="registerEmail">Электронная почта</label>
+                    <label for="registerEmail">Email</label>
                     <i class="fas fa-envelope"></i>
-                    <input type="email" id="registerEmail" placeholder="Ваш email">
-                    <div class="error-message" id="registerEmailError">Пожалуйста, введите корректный email</div>
+                    <input type="email" id="registerEmail" placeholder="example@mail.com">
+                    <div class="error-message" id="registerEmailError">Введите корректный email</div>
                 </div>
                 
                 <div class="input-group">
                     <label for="registerPassword">Пароль</label>
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="registerPassword" placeholder="Придумайте пароль">
-                    <div class="error-message" id="registerPasswordError">Пароль должен содержать не менее 6 символов</div>
+                    <input type="password" id="registerPassword" placeholder="••••••">
+                    <div class="error-message" id="registerPasswordError">Пароль должен быть не менее 6 символов</div>
                 </div>
                 
                 <div class="input-group">
                     <label for="registerConfirmPassword">Подтвердите пароль</label>
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="registerConfirmPassword" placeholder="Повторите пароль">
+                    <input type="password" id="registerConfirmPassword" placeholder="••••••">
                     <div class="error-message" id="registerConfirmPasswordError">Пароли не совпадают</div>
                 </div>
                 
                 <button class="btn" id="registerBtn">Зарегистрироваться</button>
-                <div class="success-message" id="registerSuccess">Регистрация прошла успешно!</div>
-            </div>
-            
-            <div class="db-info">
-                <p>База данных IndexedDB в вашем браузере</p>
-                <div class="db-stats">
-                    <div class="stat-item">
-                        <div class="stat-value" id="userCount">0</div>
-                        <div>пользователей</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="dbSize">0 KB</div>
-                        <div>размер БД</div>
-                    </div>
-                </div>
+                <div class="success-message" id="registerSuccess">Регистрация успешна!</div>
             </div>
         </div>
     </div>
@@ -113,8 +99,7 @@
         
         <div class="welcome-container">
             <h2>Привет, <span id="userName"></span>!</h2>
-            <p>Вы вошли в систему как <span id="userEmail" class="stat-value"></span></p>
-            <p>Теперь вы можете получить доступ ко всем функциям нашего сайта.</p>
+            <p>Ваш email: <span id="userEmail"></span></p>
             <button class="btn logout-btn" id="logoutBtn">Выйти</button>
         </div>
     </div>
